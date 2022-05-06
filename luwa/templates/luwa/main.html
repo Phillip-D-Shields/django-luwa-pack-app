@@ -1,0 +1,34 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Django Tailwind</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+</head>
+
+<body class="w-full h-screen bg-slate-300">
+<nav class="h-12 w-full bg-emerald-900 text-emerald-200 flex justify-between items-center px-8 fixed top">
+    <a href="{% url 'pack_list' %}">home</a>
+
+    <div class="w-1/3 flex justify-between">
+        <a href="{% url 'create_pack_type' %}">pack</a>
+        <a href="{% url 'pack_list' %}">charts</a>
+
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}">logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">login</a>
+        {% endif %}
+
+    </div>
+</nav>
+<div class="h-full w-full flex justify-center items-center">
+    {% block content %}
+        {#     templates           #}
+    {% endblock %}
+</div>
+</body>
+</html>

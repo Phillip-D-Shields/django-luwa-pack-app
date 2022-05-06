@@ -1,0 +1,20 @@
+{% extends 'luwa/main.html' %}
+{% block content %}
+
+    <div class="" flex flex-col justify-center items-center">
+    <h1 class="text-5xl text-emerald-900">pack_list home / {{ request.user }}</h1>
+
+    {% if types %}
+        {% for type in types %}
+            {# TODO render each pack type as a link to the corresponding set #}
+            {# TODO display the number of packs in type           #}
+            <h2 class="text-xl text-rose-600">{{ type.name }}</h2>
+            {#        {% for pack in user_pack_type.packs %}#}
+            {#            <h2>{{ pack.created_at }}</h2>#}
+            {#        {% endfor %}#}
+        {% endfor %}
+    {% else %}
+        <h2>No packs</h2>
+    {% endif %}
+    </div>
+{% endblock %}

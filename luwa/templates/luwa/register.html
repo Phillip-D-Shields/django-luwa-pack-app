@@ -1,0 +1,14 @@
+{% extends 'luwa/main.html' %}
+{% block content %}
+
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="register" />
+</form>
+
+<p>already have an account? <a href="{% url 'login' %}">login</a></p>
+
+{% endblock %}

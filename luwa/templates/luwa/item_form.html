@@ -1,0 +1,10 @@
+{% extends 'luwa/main.html' %}
+{% block content %}
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="my-4 p4-2 py-2 bg-emerald-800 text-emerald-200" type="submit" value="Submit">
+    </form>
+
+{% endblock %}

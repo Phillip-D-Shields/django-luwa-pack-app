@@ -1,0 +1,13 @@
+{% extends 'luwa/main.html' %}
+{% block content %}
+
+    <div class="flex flex-col items-center justify-center px-4 p-y">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="px-2 py-1 bg-emerald-800 text-emerald-200 rounded-sm" type="submit" value="login"/>
+        </form>
+
+        <p>need an account? <a href="{% url 'register' %}">register here</a></p>
+    </div>
+{% endblock %}
